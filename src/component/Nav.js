@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import style from './index.scss'
 import IconFont from '../common/iconfont';
 

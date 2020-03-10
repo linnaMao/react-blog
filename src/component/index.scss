@@ -88,6 +88,40 @@
   }
 }
 
+// 标签到列表
+.tagDetailWrap {
+  // text-align: center;
+  margin: 0 auto;
+  width: 900px;
+  border-left: 4px solid #f5f5f5;
+  .tag {
+    padding: 0 10px;
+  }
+  .articleTitle {
+    box-shadow: 0 0 14px #cacbcc;
+    margin: 0 40px;
+    margin-top: 40px;
+    padding: 24px;
+    color: $colorB;
+    font-size: $fontE;
+    header {
+      border-bottom: 1px dashed #ccc;
+      cursor: pointer;
+      .time {
+        display: inline-block;
+        padding-right: 10px;
+        font-size: $fontE;
+      }
+      .title {
+        display: inline-block;
+        font-size: $fontB;
+        font-weight: 500;
+        margin: 0px;
+      }
+    }
+  }
+}
+
 // footer样式
 .footerWrap {
   color: $colorA;

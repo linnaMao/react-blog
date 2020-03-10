@@ -122,6 +122,15 @@
   }
 }
 
+//关于
+.aboutWrap {
+  text-align: center;
+  margin: 0 auto;
+  width: 900px;
+  box-shadow: 0 0 14px #cacbcc;
+  padding: 40px;
+}
+
 // footer样式
 .footerWrap {
   color: $colorA;

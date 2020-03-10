@@ -15,3 +15,15 @@ $fontD: 16px;
 $fontE: 14px;
 $fontF: 12px;
 $fontG: 20px;
+
+.articleBtn {
+  background: $colorG;
+  border: 1px solid $colorE;
+  color: $colorF;
+  margin-top: 50px;
+  &:hover {
+    color: $colorG;
+    background-color: $colorF;
+    border: 1px solid $colorF;
+  }
+}

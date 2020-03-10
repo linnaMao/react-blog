@@ -1,24 +1,14 @@
-import React from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
-import Nav from './component/Nav'
-import BlogHome from './component/BlogHome'
-import BlogTag from './component/BlogTag'
-import BlogAbout from './component/BlogAbout'
-import Footer from './component/Footer';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <Nav></Nav>
-      <BrowserRouter>
-        <Route path='/' exact component={BlogHome}></Route>
-        <Route path='/tag' exact component={BlogTag}></Route>
-        <Route path='/about' exact component={BlogAbout}></Route>
-      </BrowserRouter>
-      
-      <Footer />
-    </div>
-  );
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        { this.props.children }
+      </div>
+    )
+  }
 }
 
 export default App;

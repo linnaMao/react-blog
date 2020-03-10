@@ -3,7 +3,7 @@
 
 // Nav样式
 .navWrap {
-  margin: 130px auto;
+  margin: 100px auto;
   text-align: center;
   line-height: 36px;
   .navTitle {
@@ -61,6 +61,29 @@
         background-color: $colorF;
         border: 1px solid $colorF;
       }
+    }
+  }
+}
+
+// 标签
+.tagWrap {
+  text-align: center;
+  .tagNum {
+    margin-bottom: 20px;
+  }
+  .tag {
+    font-size: $fontF;
+    padding: 5px 8px;
+    margin: 0 5px;
+    border-radius: 3px;
+    background: $colorG;
+    border: 1px solid $colorE;
+    color: $colorF;
+    margin-top: 50px;
+    &:hover {
+      color: $colorG;
+      background-color: $colorF;
+      border: 1px solid $colorF;
     }
   }
 }

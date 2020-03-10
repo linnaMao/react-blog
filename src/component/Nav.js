@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Route } from "react-router-dom";
 import style from './index.scss'
 import IconFont from '../common/iconfont';
 
@@ -37,14 +38,12 @@ class Nav extends React.Component {
        </div>
        <div className={style.navAllItem}>
          {
-           navItem.map(item => {
-             return (
-              <a href={item.href} key={item.icon} className={style.navItem}>
-                <IconFont type={item.icon} />
-                <div>{item.name}</div>
-              </a>
-             )
-           })
+           navItem.map(item => (
+            <Link to={item.href} key={item.icon} className={style.navItem}>
+              <IconFont type={item.icon} />
+              <div>{item.name}</div>
+            </Link>
+           ))
          }
        </div>
      </div>

@@ -1,0 +1,73 @@
+@import '../default.scss';
+
+
+// Nav样式
+.navWrap {
+  margin: 130px auto;
+  text-align: center;
+  line-height: 36px;
+  .navTitle {
+    font-size: $fontB;
+    color: $colorB;
+  }
+  .navMotto{
+    color: $colorA;
+    margin: 8px 0;
+  }
+  .navAllItem {
+    display: inline-flex;
+    font-weight: 500px;
+  }
+  .navItem {
+    font-size: $fontE;
+    margin: 0 20px;
+    color: $colorC;
+    &:hover {
+      color: $colorF;
+    }
+  }
+}
+
+// 首页文章card
+.homeWrap {
+  text-align: center;
+  margin: 0 auto;
+  width: 900px;
+  .cardMeta {
+    box-shadow: 0 0 14px #cacbcc;
+    position: relative;
+    padding: 40px;
+    .articleTitle {
+      font-size: 22px;
+      font-weight: 500;
+      margin: 10px 0;
+    }
+    .articleMeta span{
+      color: $colorD;
+      padding: 0 3px;
+      margin-bottom: 40px;
+      font-size: $fontF;
+    }
+    .articleImg {
+      width: 100%;
+    }
+    .articleBtn {
+      background: $colorG;
+      border: 1px solid $colorE;
+      color: $colorF;
+      margin-top: 50px;
+      &:hover {
+        color: $colorG;
+        background-color: $colorF;
+        border: 1px solid $colorF;
+      }
+    }
+  }
+}
+
+// footer样式
+.footerWrap {
+  color: $colorA;
+  padding: 50px 0;
+  text-align: center;
+}

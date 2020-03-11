@@ -22,7 +22,6 @@ class BlogTag extends React.Component {
 
   render() {
     const { tags } = this.state
-    console.log(tags);
     return (
      <div className={style.tagWrap}>
        <div className={style.tagNum}>目前共计 { tags.length } 个标签</div>

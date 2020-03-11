@@ -25,7 +25,6 @@ class BlogHome extends React.Component {
 
   render() {
     const { list } = this.state
-    console.log(list);
     return (
      <div className={style.homeWrap}>
        {

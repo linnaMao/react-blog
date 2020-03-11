@@ -7,11 +7,13 @@ import BlogHome from './component/BlogHome'
 import BlogTag from './component/BlogTag'
 import BlogAbout from './component/BlogAbout'
 import TagDetail from './component/TagDetail'
+import Canvas from './component/Canvas'
 
 function Router() {
   return (
     <App>
       <BrowserRouter>
+      <Canvas></Canvas>
         <Nav></Nav>
         <Route path='/' exact component={BlogHome}></Route>
         <Route path='/tag/:name' exact component={TagDetail}></Route>

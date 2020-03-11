@@ -19,7 +19,7 @@ class TagDetail extends React.Component {
     const { list } = this.state
     return (
      <div className={style.tagDetailWrap}>
-       <div className={style.tag}>{name}标签</div>
+       <div className={style.tag}> <span>{name}</span> 标签</div>
        {
          list.map(item => {
            if (item.tag === name) {

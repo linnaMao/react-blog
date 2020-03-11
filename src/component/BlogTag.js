@@ -24,7 +24,7 @@ class BlogTag extends React.Component {
     const { tags } = this.state
     return (
      <div className={style.tagWrap}>
-       <div className={style.tagNum}>目前共计 { tags.length } 个标签</div>
+       <div className={style.tagNum}>目前共有 <span>{ tags.length }</span> 个标签哦~~</div>
         {
           tags.map(item => (
             <Link

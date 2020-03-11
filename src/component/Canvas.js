@@ -5,17 +5,17 @@ class Canvas extends React.Component {
     this.updateCanvas();
   }
   updateCanvas() {
-    var canvas = this.refs.canvas;
-    var ctx = canvas.getContext("2d");
-    var cw = canvas.width = window.innerWidth,
+    let canvas = this.refs.canvas;
+    let ctx = canvas.getContext("2d");
+    let cw = canvas.width = window.innerWidth,
       cx = cw / 2;
-    var ch = canvas.height = window.innerHeight,
+    let ch = canvas.height = window.innerHeight,
       cy = ch / 2;
 
     ctx.fillStyle = "#ECE9E6";
-    var linesNum = 16;
-    var linesRy = [];
-    var requestId = null;
+    let linesNum = 16;
+    let linesRy = [];
+    let requestId = null;
 
     function Line(flag) {
       this.flag = flag;
@@ -74,9 +74,9 @@ class Canvas extends React.Component {
       }
     }
 
-    for (var i = 0; i < linesNum; i++) {
-      var flag = i % 2 === 0 ? "h" : "v";
-      var l = new Line(flag);
+    for (let i = 0; i < linesNum; i++) {
+      let flag = i % 2 === 0 ? "h" : "v";
+      let l = new Line(flag);
       linesRy.push(l);
     }
 
@@ -84,15 +84,15 @@ class Canvas extends React.Component {
       requestId = window.requestAnimationFrame(Draw);
       ctx.clearRect(0, 0, cw, ch);
 
-      for (var i = 0; i < linesRy.length; i++) {
-        var l = linesRy[i];
+      for (let i = 0; i < linesRy.length; i++) {
+        let l = linesRy[i];
         l.draw();
         l.update();
       }
-      for (var i = 0; i < linesRy.length; i++) {
-        var l = linesRy[i];
-        for (var j = i + 1; j < linesRy.length; j++) {
-          var l1 = linesRy[j]
+      for (let i = 0; i < linesRy.length; i++) {
+        let l = linesRy[i];
+        for (let j = i + 1; j < linesRy.length; j++) {
+          let l1 = linesRy[j]
           Intersect2lines(l, l1);
         }
       }
@@ -100,9 +100,9 @@ class Canvas extends React.Component {
 
     function Init() {
       linesRy.length = 0;
-      for (var i = 0; i < linesNum; i++) {
-        var flag = i % 2 === 0 ? "h" : "v";
-        var l = new Line(flag);
+      for (let i = 0; i < linesNum; i++) {
+        let flag = i % 2 === 0 ? "h" : "v";
+        let l = new Line(flag);
         linesRy.push(l);
       }
 
@@ -126,15 +126,15 @@ class Canvas extends React.Component {
     }, 15);
 
     function Intersect2lines(l1, l2) {
-      var p1 = l1.a,
+      let p1 = l1.a,
         p2 = l1.b,
         p3 = l2.a,
         p4 = l2.b;
-      var denominator = (p4.y - p3.y) * (p2.x - p1.x) - (p4.x - p3.x) * (p2.y - p1.y);
-      var ua = ((p4.x - p3.x) * (p1.y - p3.y) - (p4.y - p3.y) * (p1.x - p3.x)) / denominator;
-      var ub = ((p2.x - p1.x) * (p1.y - p3.y) - (p2.y - p1.y) * (p1.x - p3.x)) / denominator;
-      var x = p1.x + ua * (p2.x - p1.x);
-      var y = p1.y + ua * (p2.y - p1.y);
+      let denominator = (p4.y - p3.y) * (p2.x - p1.x) - (p4.x - p3.x) * (p2.y - p1.y);
+      let ua = ((p4.x - p3.x) * (p1.y - p3.y) - (p4.y - p3.y) * (p1.x - p3.x)) / denominator;
+      let ub = ((p2.x - p1.x) * (p1.y - p3.y) - (p2.y - p1.y) * (p1.x - p3.x)) / denominator;
+      let x = p1.x + ua * (p2.x - p1.x);
+      let y = p1.y + ua * (p2.y - p1.y);
       if (ua > 0 && ub > 0) {
         markPoint({
           x: x,

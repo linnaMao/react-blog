@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import style from './index.scss'
 import store from '../store'
+import * as actionCreates from '../store/actionCreates'
 
 class BlogTag extends React.Component {
   constructor(props) {
@@ -13,8 +14,9 @@ class BlogTag extends React.Component {
   handleStoreChange = () => {
     this.setState(store.getState())
   }
-  handleTagClick = () => {
 
+  componentDidMount() {
+    store.dispatch(actionCreates.getTags())
   }
 
 
@@ -27,12 +29,12 @@ class BlogTag extends React.Component {
         {
           tags.map(item => (
             <Link
-              to={'/tag/'+ item.name} 
-              key={item.id} 
+              to={'/tag/'+ item.tagName} 
+              key={item.tagId} 
               className={style.tag}
               onClick={this.handleTagClick}
               >
-                { item.name }
+                { item.tagName }
               </Link>
           ))
         }

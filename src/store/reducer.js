@@ -2,24 +2,8 @@
 // state： 整个store存储的数据
 
 const defaultState = {
-  tags: [
-    {
-      id: 0,
-      name: "前端"
-    },
-    {
-      id: 1,
-      name: "JavaScript"
-    },
-    {
-      id: 2,
-      name: "webpack"
-    },
-    {
-      id: 3,
-      name: "node"
-    }
-  ]
+  tags: [],
+  list: []
 }
 
 // state: 上一次存储的数据
@@ -27,6 +11,13 @@ const defaultState = {
 export default (state = defaultState, action) => {
   // 深拷贝
   const newState = JSON.parse(JSON.stringify(state))
-  
+  if (action.type === 'get_article_data') {
+    newState.list = action.data
+    return newState
+  }
+  if (action.type === 'get_tags_data') {
+    newState.tags = action.data
+    return newState
+  }
   return state
 }

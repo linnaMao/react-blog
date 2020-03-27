@@ -8,22 +8,19 @@ import BlogTag from './component/BlogTag'
 import BlogAbout from './component/BlogAbout'
 import TagDetail from './component/TagDetail'
 import Canvas from './component/Canvas'
+import ArticleDetail from './component/ArticleDetail'
 
 function Router() {
   return (
     <App>
       <BrowserRouter>
-      <Canvas></Canvas>
+        <Canvas></Canvas>
         <Nav></Nav>
         <Route path='/' exact component={BlogHome}></Route>
+        <Route path='/tag' exact component={BlogTag}></Route>
         <Route path='/tag/:name' exact component={TagDetail}></Route>
-        <Route path='/tag' exact render={() => 
-          <BlogTag>
-              
-          </BlogTag>
-        }>
-        </Route>
         <Route path='/about' exact component={BlogAbout}></Route>
+        <Route path='/detail:name' exact component={ArticleDetail}></Route>
       </BrowserRouter>
       <Footer></Footer>
     </App>

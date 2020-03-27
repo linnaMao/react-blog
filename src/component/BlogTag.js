@@ -7,12 +7,15 @@ import * as actionCreates from '../store/actionCreates'
 class BlogTag extends React.Component {
   constructor(props) {
     super(props)
+    this.isUnMount = false
     this.state = store.getState()
     store.subscribe(this.handleStoreChange)
   }
 
   handleStoreChange = () => {
-    this.setState(store.getState())
+    if (this.isUnMount === false) {
+      this.setState(store.getState())
+    }
   }
 
   componentDidMount() {
@@ -39,6 +42,10 @@ class BlogTag extends React.Component {
         }
      </div>
     )
+  }
+
+  componentWillUnmount() {
+    this.isUnMount = true
   }
 }
 

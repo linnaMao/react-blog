@@ -11,12 +11,15 @@ import  moment from '../common/moment'
 class BlogHome extends React.Component {
   constructor(props) {
     super(props)
+    this.isUnMount = false
     this.state = store.getState()
     store.subscribe(this.handleStoreChange)
   }
 
   handleStoreChange = () => {
-    this.setState(store.getState())
+    if (this.isUnMount === false) {
+      this.setState(store.getState())
+    }
   }
 
   componentDidMount() {
@@ -41,10 +44,9 @@ class BlogHome extends React.Component {
             <div>
               <p>
                 <img className={style.articleImg} src={articleImg} alt=""/>
-                <Link>
+                <Link to={ '/detail' + item.id }>
                   <Button className={style.articleBtn} size="large">阅读全文</Button>
                 </Link>
-                
               </p>
             </div>
           </div>
@@ -52,6 +54,10 @@ class BlogHome extends React.Component {
        }
      </div>
     )
+  }
+
+  componentWillUnmount() {
+    this.isUnMount = true
   }
 }
 

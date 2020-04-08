@@ -52,6 +52,15 @@ class BlogHome extends React.Component {
           </div>
          ))
        }
+       <div className={style.pagination}>
+          <span className={style.pagePrev}>
+            <IconFont type='icon-zuojiantou' />
+          </span>
+          <span className={style.num}>1</span>
+          <span className={style.pageNext}>
+            <IconFont type='icon-youjiantou' />
+          </span>
+       </div>
      </div>
     )
   }

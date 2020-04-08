@@ -73,6 +73,19 @@ canvas {
       }
     }
   }
+
+  // 文章当前页数
+  .pagination {
+    .pagePrev, .pageNext {
+      padding: 0 20px;
+      color: $colorD;
+      cursor: not-allowed;
+    }
+    .num {
+      color: $colorF;
+      font-weight: 550;
+    }
+  }
 }
 
 // 标签

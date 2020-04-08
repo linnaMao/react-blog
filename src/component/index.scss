@@ -1,13 +1,11 @@
 @import '../default.scss';
 
 canvas {
-  // width: 100%;
-  //   height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
-    background: #fff;
+    background: $colorH;
 }
 
 // Nav样式
@@ -44,11 +42,11 @@ canvas {
   margin: 0 auto;
   width: 900px;
   .cardMeta {
-    box-shadow: 0 0 14px #cacbcc;
+    box-shadow: 0 0 14px $colorI;
     position: relative;
     padding: 40px;
     margin-bottom: 40px;
-    background-color: #fff;
+    background-color: $colorH;
     .articleTitle {
       font-size: 22px;
       font-weight: 500;
@@ -109,7 +107,8 @@ canvas {
   // text-align: center;
   margin: 0 auto;
   width: 900px;
-  border-left: 4px solid #f5f5f5;
+  border-left: 4px solid $colorK;
+  background-color: $colorH;
   .tag {
     padding: 0 10px;
     span {
@@ -118,14 +117,14 @@ canvas {
     }
   }
   .articleTitle {
-    box-shadow: 0 0 14px #cacbcc;
+    box-shadow: 0 0 14px $colorI;
     margin: 0 40px;
     margin-top: 40px;
     padding: 24px;
     color: $colorB;
     font-size: $fontE;
     header {
-      border-bottom: 1px dashed #ccc;
+      border-bottom: 1px dashed $colorJ;
       cursor: pointer;
       .time {
         display: inline-block;
@@ -147,8 +146,9 @@ canvas {
   text-align: center;
   margin: 0 auto;
   width: 900px;
-  box-shadow: 0 0 14px #cacbcc;
+  box-shadow: 0 0 14px $colorI;
   padding: 40px;
+  background-color: $colorH;
 }
 
 // footer样式

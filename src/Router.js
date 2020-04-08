@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { BrowserRouter, Route } from "react-router-dom"
 import App from './App'
 import Nav from './component/Nav'
 import Footer from './component/Footer'
@@ -14,15 +14,15 @@ function Router() {
   return (
     <App>
       <BrowserRouter>
-        <Canvas></Canvas>
-        <Nav></Nav>
+        <Canvas/>
+        <Nav/>
         <Route path='/' exact component={BlogHome}></Route>
         <Route path='/tag' exact component={BlogTag}></Route>
         <Route path='/tag/:name' exact component={TagDetail}></Route>
         <Route path='/about' exact component={BlogAbout}></Route>
         <Route path='/detail:name' exact component={ArticleDetail}></Route>
       </BrowserRouter>
-      <Footer></Footer>
+      <Footer/>
     </App>
   )
 }

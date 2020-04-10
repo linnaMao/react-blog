@@ -22,12 +22,17 @@ class BlogHome extends React.Component {
     }
   }
 
+  handlePrevClick = () => {
+    const { pageSize, totalPage, num } = this.state
+    store.dispatch(actionCreates.getPrevPage(num, pageSize, totalPage))
+  }
+
   componentDidMount() {
     store.dispatch(actionCreates.getArticle())
   }
 
   render() {
-    const { list } = this.state
+    const { list, num } = this.state
     return (
      <div className={style.homeWrap}>
        {
@@ -53,11 +58,11 @@ class BlogHome extends React.Component {
          ))
        }
        <div className={style.pagination}>
-          <span className={style.pagePrev}>
+          <span className={style.pagePrev} onClick={this.handlePrevClick}>
             <IconFont type='icon-zuojiantou' />
           </span>
-          <span className={style.num}>1</span>
-          <span className={style.pageNext}>
+      <span className={style.num}>{ num }</span>
+          <span className={style.pageNext} onClick={this.handleNextClick}>
             <IconFont type='icon-youjiantou' />
           </span>
        </div>

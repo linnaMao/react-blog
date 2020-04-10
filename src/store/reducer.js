@@ -3,7 +3,10 @@
 
 const defaultState = {
   tags: [],
-  list: []
+  list: [],
+  pageSize: 4,
+  totalPage: 0,
+  num: 1
 }
 
 // state: 上一次存储的数据
@@ -13,6 +16,7 @@ export default (state = defaultState, action) => {
   const newState = JSON.parse(JSON.stringify(state))
   if (action.type === 'get_article_data') {
     newState.list = action.data
+    newState.totalPage = action.totalPage
     return newState
   }
   if (action.type === 'get_tags_data') {
